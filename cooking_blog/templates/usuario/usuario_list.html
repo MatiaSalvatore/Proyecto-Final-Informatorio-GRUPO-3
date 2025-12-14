@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load colaborador_tags %}
+
+{%block contenido%}
+<div class="container-fluid" style="margin: 200px;">
+    {% if user.is_superuser or request.user|has_group:"Colaborador" %}
+        {% for i in usuarios %}
+        <br>
+        <li>{{i.username}}</li>
+        <li>{{i.id}}</li>
+        {% empty %} 
+        <h1>No hay registros</h1>
+        {%endfor%}
+    {% endif %}
+</div>
+{% endblock %}  
