@@ -4,6 +4,9 @@
 <html lang="es-ar">
     <head>
         <title>{%block title %} Título {% endblock title %}</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -21,7 +24,6 @@
     </head>
 
     <body>
-
         <header>
         <a class="flex-sm-fill text-sm-center nav-link active" href="#">
             <img src="{%static 'img/info.png' %}" style="max-width: 300px; margin: 30px">
@@ -80,6 +82,14 @@
         </nav>  
         
         </header>
+        <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
         {% block contenido %}
         {% endblock %}
         <footer>
