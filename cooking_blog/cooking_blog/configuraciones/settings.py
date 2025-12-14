@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'usuario.Usuario'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#EMAIL_BACKEND =  'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER= 'email_a_utilizar@gmail.com'
+#EMAIL_HOST_PASSWORD= 'Contraseña de email'
 
 # Application definition
 
@@ -39,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.posts',
     'apps.contacto',
+    'apps.usuario',
 ]
 
 MIDDLEWARE = [
