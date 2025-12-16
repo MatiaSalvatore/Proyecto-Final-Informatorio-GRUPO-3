@@ -3,14 +3,16 @@
 {% load colaborador_tags %}
 
 {%block contenido%}
-<center>
-        <div class="container-fluid" style="margin: 200px">
-                <table>{{posts.titulo}}</table>   
-                <table>{{posts.subtitulo}}</table>
-                <table>{{posts.categoria}}</table>
-                <br>
-                <table>{{posts.texto}}</table>
+<div class="fondo">
+        <br>
+        <div class="contenedor_receta">
                 <img src="{{ posts.imagen.url }}" alt="">
+                <h1>{{posts.titulo}}</h1>   
+                <h2>{{posts.subtitulo}}</h2>
+                <h7>Categoría: {{posts.categoria}}</h7>
+                <br>
+                <div class="descripcion">{{posts.texto}}</div>
+                
                 {% if user.is_superuser or request.user|has_group:"Colaborador" %}
                         <div class="container-fluid" style="margin-top: 300px;">
                                 <a id="boton_post" href="{% url 'apps.posts:post_update' pk=posts.id %}">Modificar Post</a>
@@ -20,7 +22,7 @@
                         </div>
                 {% endif %}
         </div>
-</center>
+</div>
 
 {% include 'comentario/crear_comentario.html' %}
 

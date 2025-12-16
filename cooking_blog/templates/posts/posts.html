@@ -3,29 +3,36 @@
 {% load colaborador_tags %}
 
 {%block contenido%}
-<div class="container-fluid" style="margin: 200px;">
+<div class="fondo_posts">
+    <h1>Recetas</h1>
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
-    <div class="container-fluid" style="margin-top: 300px;">
-        <a id="boton_post" href="{% url 'apps.posts:crear_post' %}">Crear nuevo post</a>
-    </div>
+        <div>
+            <a class="btn btn-warning" id="boton_post" href="{% url 'apps.posts:crear_post' %}">Crear nuevo post</a>
+        </div>
     {% endif %}
-    {% for i in posts%}
-        <br>
-        <li>{{i.titulo}}</li>
-        <li>{{i.subtitulo}}</li>
-        <li>{{i.categoria}}</li>
-        <a
-            name=""
-            id=""
-            class="btn btn-primary"
-            href="{% url 'apps.posts:post_individual' i.id %}"
-            role="button"
-            >Ir a receta</a
-        >
-        
-        {% empty %}
-        <h1>No hay registros</h1>
+    <div class="contenedor_posts">
 
-    {%endfor%}
+        {% for i in posts%}
+
+            <div class="tarjeta_receta">
+                <img src="{{ i.imagen.url }}">
+                <div class="info_tarjeta_contenedor">
+                    <h3>{{i.titulo}}</h3>
+                    <h7>Categoría: {{i.categoria}}<h7>
+                    <a
+                        name=""
+                        id=""
+                        class="btn btn-warning"
+                        href="{% url 'apps.posts:post_individual' i.id %}"
+                        role="button"
+                        >Ir a receta</a>
+                    </div>
+            </div>
+            
+            {% empty %}
+            <h1>No hay registros</h1>
+
+        {%endfor%}
+        </div>
 </div>
 {% endblock %}  
