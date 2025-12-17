@@ -11,7 +11,7 @@
                 <h2>{{posts.subtitulo}}</h2>
                 <h7>Categoría: {{posts.categoria}}</h7>
                 <br>
-                <div class="descripcion">{{posts.texto}}</div>
+                <div class="descripcion">{{posts.texto|linebreaks}}</div>
                 
                 {% if user.is_superuser or request.user|has_group:"Colaborador" %}
                         <div class="container-fluid" style="margin-top: 300px;">

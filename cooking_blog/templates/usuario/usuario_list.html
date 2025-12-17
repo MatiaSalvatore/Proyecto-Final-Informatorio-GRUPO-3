@@ -3,12 +3,17 @@
 {% load colaborador_tags %}
 
 {%block contenido%}
-<div class="container-fluid" style="margin: 200px;">
+
+
+<div class="container-fluid">
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
         {% for i in usuarios %}
-        <br>
-        <li>{{i.username}}</li>
-        <li>{{i.id}}</li>
+        <div style="display: flex; flex-direction: row;align-items: center;justify-content: space-evenly;">
+            <img src="{{ i.imagen.url }}" alt="">
+            <h1>{{i.username}}</h1>
+            (<a style="color:black;" href="{% url 'apps.usuario:usuario_delete' i.pk %}">Eliminar</a>)
+
+        </div>
         {% empty %} 
         <h1>No hay registros</h1>
         {%endfor%}

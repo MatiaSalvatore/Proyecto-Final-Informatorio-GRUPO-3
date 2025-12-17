@@ -5,8 +5,8 @@
 
 <center>
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
-    <div class="container-fluid" style="margin:200px;">
-        <div class="container-fluid" style="margin-top: 300px;">
+    <div class="container-fluid">
+        <div class="container-fluid">
             <a id="boton_post" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoria</a>
         </div>
     </div>

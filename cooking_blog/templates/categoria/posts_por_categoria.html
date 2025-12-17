@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block contenido %}
+
+<center>
+    <div>
+        <h1>Posts por categoria</h1>
+        <ul>
+            {for posts in posts %}
+                <li>{post.titulo}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</center>
+

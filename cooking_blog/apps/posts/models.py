@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+
 #Categoría
 
 class Categoria(models.Model):

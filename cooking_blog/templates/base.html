@@ -53,20 +53,18 @@
                                             Lista de usuarios
                                         </a>
                                     </td>
+                                                                </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'apps.posts:categoria_list' %}">
+                                                Lista de categorias
+                                            </a>
+                                        </td>
+                                    </tr>
                                 {% endif %}
-                            </tr>
-
                             <tr>
                                 <td>
-                                    <a href="#">
-                                        Lista de categorias
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <a href="#">
+                                    <a href="{% url 'apps.posts:posts' %}">
                                         Lista de posts
                                     </a>
                                 </td>
