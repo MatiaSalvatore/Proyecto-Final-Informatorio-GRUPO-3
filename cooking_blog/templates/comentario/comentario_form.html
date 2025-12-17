@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load colaborador_tags %}
 {% block contenido %}
-<center>
+<center class="fondo_default">
     {% if user.is_superuser or comentario.usuario == user %}
-    <div class="container-fluid" style="margin: 300px;">
+    <div >
         <h1>Editar comentario</h1>
         <form method="POST" style="margin-bottom:10px;margin-top: 100px;">
         {%csrf_token%}
@@ -12,7 +12,7 @@
         </form>
     </div>
     {%else%}
-     <div class="container-fluid" style="margin:300px">
+     <div class="container-fluid">
         <h1>Solo usuarios con permisos pueden acceder a esta página</h1>
      </div>
      {% endif%}
