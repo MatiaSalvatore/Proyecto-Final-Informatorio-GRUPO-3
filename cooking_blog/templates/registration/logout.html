@@ -5,7 +5,7 @@
 {% block contenido %}
 <div class="fondo">
     <div class="alerta">
-        <div class="messages">
+        <div class="messages" style="margin-left: 50px;">
             {%for message in messages %}
                 <h3{%if message.tags%} class="{{message.tags}}"{% endif %}>{{message}}</h3>
             {% endfor %}

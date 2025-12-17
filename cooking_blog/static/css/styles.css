@@ -3,6 +3,21 @@
 * {
     font-family: "Baloo 2", sans-serif;
 }
+::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background-color: #ffffff00;
+            border: 1px solid #cacaca00;
+        }
+        
+::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #ac611b;
+        }
+
 
 
 .dropdown {
@@ -105,7 +120,8 @@
     background-image: url('../img/background_default.png'); 
     background-size: cover; 
     background-position: center; 
-    height: 100vh;
+    height: fit-content;
+    padding: 20px;
     border-bottom: solid 10px;
     border-color: #5f2007;
 }
@@ -116,11 +132,9 @@
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 1000px;
     height: 100vh;
-    overflow: scroll;
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;     /* Firefox, Safari 18.2+, Chromium 121+ */
+    overflow-y: scroll;
 
 }
 
@@ -131,7 +145,7 @@
     transition: 0.3s;
     background-color: white;
     width: 300px;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -148,7 +162,6 @@
 .info_tarjeta_contenedor{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -169,14 +182,25 @@
     margin-left: 100px;
 }
 
+.fondo_receta{
+    background-image: url('../img/background_default.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: fit-content;
+    border-bottom: solid 10px;
+    border-color: #5f2007;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .contenedor_receta{
     width: 500px;
-    height: 500px;
-    margin-left: 100px;
+    height: fit-content;
     background-color: wheat;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 10px;
-    padding-bottom: 100px;
+    padding: 20px;
     border-radius: 10px;
     color:rgb(141, 27, 27);
 }
@@ -186,16 +210,130 @@
     width: 100%;
     border-radius: 10px;
     object-fit: cover; 
-    height: 50%;
+    height: 300px;
     }
 
-.descripcion{
-    overflow: scroll;
-    height: 120px;
-
-}
 
 .fondo_comentarios{
     background-color:#d6511d;
     color:white;
+}
+
+.comentario{
+    background-color: #f9f9f9;
+    color:#5f2007;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.comentario img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.boton_menus{
+    display: block;
+    background: #d6511d;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.boton_menus_eliminar{
+    display: block;
+    background: #fc1313;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.fondo_settings{
+    background-image: url('../img/background_default.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: fit-content;
+    border-bottom: solid 10px;
+    border-color: #5f2007;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo_lista_categorias{
+    background-color: wheat;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    height: fit-content;
+}
+
+.fondo_lista_usuarios{
+    background-color: wheat;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    height: fit-content;
+}
+
+.user_card{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+}
+
+.user_card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.fondo_default{
+    background-color: wheat;
+    height: fit-content;
+    border-bottom: solid 10px;
+    border-color: #5f2007;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartel{
+    background-color: wheat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }

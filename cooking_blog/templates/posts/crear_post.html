@@ -3,11 +3,11 @@
 {% block contenido %}
 
 
-<center>
+<center class="fondo_default">
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
     <div class="container-fluid">
         <div class="container-fluid">
-            <a id="boton_post" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoria</a>
+            <a class="boton_menus" style="width: 220px;" id="boton_post" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoria</a>
         </div>
     </div>
     <h1>Crear Post</h1>

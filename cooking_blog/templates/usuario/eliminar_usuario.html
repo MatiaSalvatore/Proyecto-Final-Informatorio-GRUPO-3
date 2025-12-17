@@ -2,7 +2,7 @@
 {% load colaborador_tags %}
 
 {% block contenido %}
-<center>
+<center class="fondo_default">
 {% if user.is_superuser or request.user|has_group:"Colaborador" %}
     <div class="container-fluid">
         <h1>Eliminar usuario</h1><br>

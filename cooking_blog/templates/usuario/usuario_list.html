@@ -5,18 +5,20 @@
 {%block contenido%}
 
 
-<div class="container-fluid">
+<div class="fondo_settings">
+    <div class="fondo_lista_usuarios">
     {% if user.is_superuser or request.user|has_group:"Colaborador" %}
         {% for i in usuarios %}
-        <div style="display: flex; flex-direction: row;align-items: center;justify-content: space-evenly;">
+        <div class="user_card">
             <img src="{{ i.imagen.url }}" alt="">
             <h1>{{i.username}}</h1>
-            (<a style="color:black;" href="{% url 'apps.usuario:usuario_delete' i.pk %}">Eliminar</a>)
-
+            <a class = "boton_menus_eliminar" href="{% url 'apps.usuario:usuario_delete' i.pk %}">Eliminar</a>
         </div>
         {% empty %} 
         <h1>No hay registros</h1>
         {%endfor%}
     {% endif %}
+    </div>
+<br><br><br><br>
 </div>
 {% endblock %}  

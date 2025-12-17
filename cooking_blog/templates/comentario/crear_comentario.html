@@ -3,23 +3,29 @@
 <center>
 <div class="fondo_comentarios">
         <br>
-        <h4>Comentarios</h4>
-        <br><br>
+        <h2>Comentarios</h2>
+        <br>
 <div class="fondo_comentarios">
         {% for comentario in comentarios %}
-        <table>{{comentario.usuario}} - {{comentario.fecha}}</table>
-        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                <p>{{ comentario.texto }}</p>
-                {% if user.is_superuser or comentario.usuario == user %}
-                    <br><a id="boton_post" href="{%url 'apps.posts:comentario_editar' pk=comentario.pk %}?next={{request.path}}">Editar comentario</a>
-                {% endif %}
-                {% if user.is_superuser or comentario.usuario == user or request.user|has_group:"Colaborador" %}
-                 <br><a id="boton_post" href="{% url 'apps.posts:comentario_eliminar' pk=comentario.pk %}">Eliminar comentario</a>
-                {% endif %}
-                <br><br>
-        </ul>
+        <div class="comentario"> 
+                <div style="display: flex; flex-direction: row;">
+                        <img src="{{ comentario.usuario.imagen.url }}" alt="">
+                        <div style="display: flex; flex-direction: column; align-items: start; margin-left: 10px;">
+                                <h7>{{comentario.usuario}}</h7>
+                                <h9>{{comentario.fecha}}</h9>
+                                {% if user.is_superuser or comentario.usuario == user %}
+                                 <a class="boton_menus" id="boton_post" href="{%url 'apps.posts:comentario_editar' pk=comentario.pk %}?next={{request.path}}">Editar comentario</a>
+                                {% endif %}
+                                {% if user.is_superuser or comentario.usuario == user or request.user|has_group:"Colaborador" %}
+                                <a class="boton_menus_eliminar" id="boton_post" href="{% url 'apps.posts:comentario_eliminar' pk=comentario.pk %}">Eliminar comentario</a>
+                                {% endif %}
+                        </div>
+                </div>
+                <p style="margin-right: 38%;">{{ comentario.texto }}</p>
+        </div>
+
         {% empty %}
-        <li>No hay comentarios - Puedes ser el primero en comentar!</li>
+        <h2>No hay comentarios - Puedes ser el primero en comentar!</h2>
         {% endfor %}
 </div>
 <a id="comentario"></a>

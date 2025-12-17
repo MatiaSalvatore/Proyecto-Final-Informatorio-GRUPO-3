@@ -3,7 +3,7 @@
 {% load colaborador_tags %}
 
 {%block contenido%}
-<div class="fondo">
+<div class="fondo_receta">
         <br>
         <div class="contenedor_receta">
                 <img src="{{ posts.imagen.url }}" alt="">
@@ -14,10 +14,10 @@
                 <div class="descripcion">{{posts.texto|linebreaks}}</div>
                 
                 {% if user.is_superuser or request.user|has_group:"Colaborador" %}
-                        <div class="container-fluid" style="margin-top: 300px;">
+                        <div class="container-fluid">
                                 <a id="boton_post" href="{% url 'apps.posts:post_update' pk=posts.id %}">Modificar Post</a>
                         </div>
-                        <div class="container-fluid" style="margin-top: 300px;">
+                        <div class="container-fluid">
                                 <a id="boton_post" href="{% url 'apps.posts:post_delete' pk=posts.pk %}">Eliminar Post</a>
                         </div>
                 {% endif %}

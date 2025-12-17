@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {% block contenido %}
 
-<center>
+<center class="fondo_default">
     <div class="container-fluid">
     <h1>Agregar nueva categoría</h1>
     <form method="POST">
@@ -10,9 +10,10 @@
         <input type="submit" value="Agregar">
     </form>
     <div class="container-fluid">
-        <a id="boton_post" href="{% url 'apps.posts:categoria_list' %}">Listar todas las categorias</a>
+        <a class="boton_menus" style="width: 250px;margin-top: 20px;" id="boton_post" href="{% url 'apps.posts:categoria_list' %}">Listar todas las categorias</a>
     </div>
 
 </div>
+<br><br><br>
 </center>
 {% endblock %}
